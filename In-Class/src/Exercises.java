@@ -1,6 +1,4 @@
-import java.util.Iterator;
 import java.util.Scanner;
-
 
 public class Exercises {
 
@@ -9,59 +7,97 @@ public class Exercises {
 		System.out.println("Enter a word I will tell you if it is abecedarian");
 		String word = input.next();
 		String lWord = word.toLowerCase();
-		if(isAbecedarian(lWord))
-		{
+		if (isAbecedarian(lWord)) {
 			System.out.println(word + " is abecedarian.");
+		} else {
+			System.out.println(word + " is not abecedarian.");
 		}
-		else
-		{
-			System.out.println(word+ " is not abecedarian.");
-		}
-		
-		if(isDoubloon(lWord))
-		{
+
+		if (isDoubloon(lWord)) {
 			System.out.println(word + " is a doubloon");
-		}
-		else
-		{
+		} else {
 			System.out.println(word + " is not a doubloon");
 		}
+		System.out.println("Enter a word");
+		String sWord = input.next();
+		System.out.println("Enter a tile set");
+		String tiles = input.next();
+
+		if (canSpell(sWord, tiles)) {
+			System.out.println(sWord + " can be spelt");
+		} else {
+			System.out.println(sWord + " can not be spelt.");
+		}
+
 	}
+
+	/*********************************************************************************
+	 * In Scrabble1 each player has a set of tiles with letters on them. The object
+	 * * of the game is to use those letters to spell words. The scoring system is *
+	 * complex, but longer words are usually worth more than shorter words. Imagine
+	 * * you are given your set of tiles as a string, like "quijibo", and you are *
+	 * given another string to test, like "jib". Write a method called canSpell that
+	 * * takes two strings and checks whether the set of tiles can spell the word.
+	 * You * might have more than one tile with the same letter, but you can use
+	 * each tile * only once. *
+	 *********************************************************************************/
+
+	private static boolean canSpell(String sWord, String tiles) {
+		int wordCount = 0;
+		int tilesCount = 0;
+		for (int i = 0; i < sWord.length(); i++) {
+			wordCount = 0;
+			for (int j = 0; j < sWord.length(); j++) {
+				if (sWord.charAt(i) == sWord.charAt(j)) {
+					wordCount++;
+				}
+			}
+			tilesCount = 0;
+			for (int k = 0; k < tiles.length(); k++) {
+				if (sWord.charAt(i) == tiles.charAt(i)) {
+					tilesCount++;
+				}
+			}
+			if (tilesCount < wordCount)
+				return false;
+		}
+		return true;
+	}
+
 	/****************************************************************************************************
-	 * A word is said to be a “doubloon” if every letter that appears in the word appears exactly twice.*
-	 * Here are some example doubloons found in the dictionary: Abba, Anna, appall, appearer, appeases, *
-	 * arraigning, beriberi, bilabial, boob, Caucasus, coco, Dada, deed, Emmett, Hannah, horseshoer,    *
-	 * intestines, Isis, mama, Mimi, murmur, noon, Otto, papa, peep, reappear, redder, sees,            *
-	 * Shanghaiings, Toto Write a method called isDoubloon that takes a string and checks whether it is *
-	 * a doubloon. To ignore case, invoke the toLowerCase method before checking.                       *
+	 * A word is said to be a “doubloon” if every letter that appears in the word
+	 * appears exactly twice.* Here are some example doubloons found in the
+	 * dictionary: Abba, Anna, appall, appearer, appeases, * arraigning, beriberi,
+	 * bilabial, boob, Caucasus, coco, Dada, deed, Emmett, Hannah, horseshoer, *
+	 * intestines, Isis, mama, Mimi, murmur, noon, Otto, papa, peep, reappear,
+	 * redder, sees, * Shanghaiings, Toto Write a method called isDoubloon that
+	 * takes a string and checks whether it is * a doubloon. To ignore case, invoke
+	 * the toLowerCase method before checking. *
 	 ****************************************************************************************************/
 	private static boolean isDoubloon(String word) {
 		int count = 0;
 		for (int i = 0; i < word.length(); i++) {
 			for (int j = 0; j < word.length(); j++) {
-				if(word.charAt(i) == word.charAt(j))
-				{
+				if (word.charAt(i) == word.charAt(j)) {
 					count++;
 				}
 			}
-			if(count > 2 || count < 2)
-			{
+			if (count > 2 || count < 2) {
 				return false;
 			}
 			count = 0;
 		}
 		return true;
 	}
+
 	/*******************************************************
-	 *A word is said to be "abecedarian" if the letters in *
-	 *the word appear in alphabetical order. Write a method* 
-	 *called isAbecedarian that takes a String and returns * 
-	 *a boolean indicating whether the word is abecedarian *
+	 * A word is said to be "abecedarian" if the letters in * the word appear in
+	 * alphabetical order. Write a method* called isAbecedarian that takes a String
+	 * and returns * a boolean indicating whether the word is abecedarian *
 	 *******************************************************/
 	private static boolean isAbecedarian(String word) {
-		for (int i = 0; i < word.length()-1; i++) {
-			if(word.charAt(i) > word.charAt(i+1))
-			{
+		for (int i = 0; i < word.length() - 1; i++) {
+			if (word.charAt(i) > word.charAt(i + 1)) {
 				return false;
 			}
 		}

@@ -9,7 +9,7 @@ public class work {
 		System.out.println("Enter the bottles of beer");
 		int n = input.nextInt();
 		int nBottle = n;
-		while (n > 1) {
+		while (n != 0) {
 			System.out.println(n + " bottles of beer on the wall, " + n + " bottles of beer.");
 			n--;
 			if (n > 1) {
