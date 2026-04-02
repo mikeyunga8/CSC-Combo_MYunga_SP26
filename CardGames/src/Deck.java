@@ -17,6 +17,30 @@ public class Deck {
 			}
 		}
 	}
+	public Deck subdeck(int low, int high) {
+		Deck sub = new Deck(high - low + 1);
+		for(int i = 0; i < sub.cards.length; i++) {
+			sub.cards[i] = this.cards[low + i];
+		}
+		return sub;
+	}
+	
+	public void selectionSort() {
+		for(int i = 0; i < this.cards.length; i++) {
+			int j = indexLowest(i, this.cards.length - 1);
+			swap(i, j);
+		}
+	}
+	private int indexLowest(int low, int high) {
+		int lowIndex = low;
+		for (int i = low + 1; i <= high; i++) {
+			if(this.cards[i].compareTo(this.cards[lowIndex]) < 0){
+				lowIndex = i;
+			}
+		}
+		return lowIndex;
+	}
+	
 	public void shuffle() {
 		for(int i = 0; i < this.cards.length; i++) {
 			int j = randomInt(i, cards.length - 1);
@@ -35,6 +59,18 @@ public class Deck {
 		this.cards[i] = this.cards[j];
 		this.cards[j] = temp;
 	}
+	public int search(Card target) {
+		int count = 0;
+		for(int i = 0; i < cards.length; i++) {
+			if(cards[i].equals(target)) {
+				return i;
+			}
+		}
+		
+		return -1;
+		
+	}
+
 	
 	private int binSearch(Deck cards, Card target) {
 		int count = 0;
