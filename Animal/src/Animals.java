@@ -1,11 +1,15 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Animals {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		Dog[] dogs = new Dog[10];
-		Cat[] cats = new Cat[10];
+		ArrayList<Animal> farm = new ArrayList<>();
+		
+		farm.add(new Cat(7, 1, "Fluffy", true));
+		farm.add(new Dog(35, 2, "Fido", false));
+		farm.add(new Animal(75, 3, "Ugg"));
 		int dogCount = 0;
 		int catCount = 0;
 		
@@ -22,40 +26,49 @@ public class Animals {
 			System.out.println("Does your cat play?(true, false)");
 			boolean play = input.nextBoolean();
 			
-			addCat(height, weight, name, play, cats, catCount);	
+			farm.add(new Cat (height, weight , name, play));
 		}
-		else {
+		else if (choice == 1){
 			System.out.println("Does your dog fetch?(true, false)");
 			boolean fetch = input.nextBoolean();
 			
-			addDog(height, weight, name, fetch, dogs, dogCount);
+			farm.add(new Dog (height, weight , name, fetch));
+		}else {
+			farm.add(new Animal(height, weight, name));
 		}
 		
-		printArray(cats);
-		printArray(dogs);
+		//printArray(cats);
+		//printArray(dogs);
+		printFarm(farm);
 	}
 
-	private static void printArray(Dog[] dogs) {
-		for(Dog dog : dogs) { //(Class object : array)
+	private static void printFarm(ArrayList<Animal> farm) {
+		for(Animal ani : farm) {
+			System.out.println(ani);
+		}
+	}
+
+	private static void printArray(Dog2[] dogs) {
+		for(Dog2 dog : dogs) { //(Class object : array)
 			System.out.println(dog);//Class.object.method(method of that object);
 		}
 	}
 
-	private static void printArray(Cat[] cats) {
-		for(Cat cat : cats)
+	private static void printArray(Cat3[] cats) {
+		for(Cat3 cat : cats)
 		{
 			System.out.println(cat);
 		}
 		
 	}
 
-	private static void addDog(int height, int weight, String name, boolean fetch, Dog[] dogs, int dogCount) {
-		dogs[dogCount] = new Dog(height, weight, name, fetch);
+	private static void addDog(int height, int weight, String name, boolean fetch, Dog2[] dogs, int dogCount) {
+		dogs[dogCount] = new Dog2(height, weight, name, fetch);
 		dogCount ++;
 	}
 
-	private static void addCat(int height, int weight, String name, boolean play, Cat[] cats, int catCount) {
-		cats[catCount] = new Cat(height, weight, name, play);
+	private static void addCat(int height, int weight, String name, boolean play, Cat3[] cats, int catCount) {
+		cats[catCount] = new Cat3(height, weight, name, play);
 		 catCount ++;
 	}
 

@@ -1,59 +1,30 @@
 
-public class Dog {
-	private int weight;
-	private int height;
-	private String name;
+public class Dog extends Animal {
 	private boolean fetch;
-
+	
 	public Dog() {
-		this.weight = 0;
-		this.height = 0;
-		this.name = "";
-		this.fetch = true;
-	}
-
-	public Dog(int weight, int height, String name, boolean fetch) {
 		super();
-		this.weight = weight;
-		this.height = height;
-		this.name = name;
+		fetch = true;
+	}
+	public Dog(int height, int weight, String name, boolean fetch) {
+		super(height, weight, name);
 		this.fetch = fetch;
 	}
-
-	public String makeNoise() {
-		return "woof woof";
+	
+	public void makeNoise() {
+		System.out.println("Woof woof");
 	}
-
-	public int getWeight() {
-		return weight;
-	}
-
-	public void setWeight(int weight) {
-		this.weight = weight;
-	}
-
-	public int getHeight() {
-		return height;
-	}
-
-	public void setHeight(int height) {
-		this.height = height;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public boolean isFetch() {
+	public boolean isPlay() {
 		return fetch;
 	}
-
-	public void setFetch(boolean fetch) {
-		fetch = fetch;
+	public void setPlay(boolean fetch) {
+		this.fetch = fetch;
 	}
-
+	@Override
+	public String toString() {
+		return "Dog3 ["  + super.toString() + "fetch=" + fetch  + "]";
+	}
+	
+	
 }
+
