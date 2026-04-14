@@ -1,12 +1,12 @@
 
 public class Course {
-	String course;
-	int numStudents;
-	int maxStudents;
-	int credits;
+	private String courseNum;
+	private int numStudents;
+	private int maxStudents;
+	private int credits;
 	
 	public Course() {
-		this.course = "";
+		this.courseNum = "";
 		this.numStudents = 0;
 		this.maxStudents = 0;
 		this.credits = 0;
@@ -14,16 +14,16 @@ public class Course {
 	
 	public Course(String course, int numStudents, int maxStudents, int credits) {
 		super();
-		this.course = course;
+		this.courseNum = course;
 		this.numStudents = numStudents;
 		this.maxStudents = maxStudents;
 		this.credits = credits;
 	}
 	public String getCourse() {
-		return course;
+		return courseNum;
 	}
 	public void setCourse(String course) {
-		this.course = course;
+		this.courseNum = course;
 	}
 	public int getNumStudents() {
 		return numStudents;

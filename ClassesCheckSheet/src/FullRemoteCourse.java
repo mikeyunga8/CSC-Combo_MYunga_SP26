@@ -19,7 +19,7 @@ public class FullRemoteCourse extends Course {
 	}
 	@Override
 	public String toString() {
-		return "FullRemoteCourse [email=" + email + "]";
-	}
+		return "In-Person Course\nCourse: " + super.getCourse() + "\n# of Students: " + super.getNumStudents() + "\nMax Seating: " + super.getMaxStudents()
+				+ "\nCredits:" + super.getCredits() + "\nRoom #: " + "\nEmail: " + email + "\nZoom info: ";	}
 	
 }

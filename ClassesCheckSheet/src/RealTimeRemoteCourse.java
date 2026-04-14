@@ -18,5 +18,10 @@ public class RealTimeRemoteCourse extends Course {
 	public void setZoomInfo(String zoomInfo) {
 		this.zoomInfo = zoomInfo;
 	}
-	
+	@Override
+	public String toString() {
+		return "In-Person Course\nCourse: " + super.getCourse() + "\n# of Students: " + super.getNumStudents() + "\nMax Seating: " + super.getMaxStudents()
+				+ "\nCredits:" + super.getCredits() + "\nRoom #: " + "\nEmail: " + "\nZoom info: " + zoomInfo;
+
+	}
 }

@@ -20,8 +20,8 @@ public class InPersonCourse extends Course {
 	}
 	@Override
 	public String toString() {
-		return "In-Person Course\nCourse: " + course + "\n# of Students: " + numStudents + "\nMax Seating: " + maxStudents
-				+ "\nCredits:" + credits + "\nRoom #: " + roomNum;
+		return "In-Person Course\nCourse: " + super.getCourse() + "\n# of Students: " + super.getNumStudents() + "\nMax Seating: " + super.getMaxStudents()
+				+ "\nCredits:" + super.getCredits() + "\nRoom #: " + roomNum + "\nEmail: " + "\nZoom info: ";
 	}
 	
 }

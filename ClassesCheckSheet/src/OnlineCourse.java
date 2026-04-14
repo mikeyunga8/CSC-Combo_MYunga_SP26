@@ -10,7 +10,8 @@ public class OnlineCourse extends Course {
 
 	@Override
 	public String toString() {
-		return "OnlineCourse []";
+		return "OnlineCourse " + "\nIn-Person Course\nCourse: " + super.getCourse() + "\n# of Students: " + super.getNumStudents() + "\nMax Seating: " + super.getMaxStudents()
+				+ "\nCredits:" + super.getCredits() + "\nRoom #: " + "\nEmail: " + "\nZoom info: ";
 	}
 	
 }
