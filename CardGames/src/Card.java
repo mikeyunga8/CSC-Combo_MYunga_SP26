@@ -1,4 +1,11 @@
 
+/**
+ * This is the card class. It generates the card with a suit and a rank
+ * 
+ * @author S03121072
+ * @since 4/22/26
+ * 
+ */
 public class Card {
 	private int suit;
 	private int rank;

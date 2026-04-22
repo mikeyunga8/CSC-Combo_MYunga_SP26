@@ -7,10 +7,15 @@ import java.util.Scanner;
  * between 1 and 2 * * the board will be an array of chars
  * 
  * @author S03121072 *
- * @date 3/4/26 * *
+ * @since 4/22/26 * *
  **************************************************/
 public class tic_tac_toe {
 
+	/**
+	 * This is the main method
+	 * 
+	 * @param args command line arguments
+	 */
 	public static void main(String[] args) {
 		int player = 2;
 		char[][] board = new char[3][3];
@@ -30,6 +35,13 @@ public class tic_tac_toe {
 			System.out.println("Cat's Game!!");
 	}
 
+	/**
+	 * This takes in the board and the current player and checks to see 
+	 * if there is a winning combination if there is a win condition it returns the player otherwise it returns -1
+	 * @param board 2d array of chars to represent a tic tac toe board 
+	 * @param player the current player
+	 * @return
+	 */
 	private static int checkWinner(char[][] board, int player) {
 		String line = null;
 		for (int i = 0; i < 8; i++) {
@@ -73,6 +85,13 @@ public class tic_tac_toe {
 		return -1;
 	}
 
+	/**
+	 * Takes board and current player to make a move on the board, 
+	 * making sure the spot they are playing in is taken or not, if there is, they have to make another move
+	 * 
+	 * @param board 2d array of chars to represent a tic tac toe board 
+	 * @param player current player
+	 */
 	private static void makeMove(char[][] board, int player) {
 		Scanner input = new Scanner(System.in);
 		int row = -1;
@@ -107,6 +126,10 @@ public class tic_tac_toe {
 		}
 	}
 
+	/**
+	 * Draws board using ASCII
+	 * @param board 2d array of chars to represent a tic tac toe board 
+	 */
 	private static void drawBoard(char[][] board) {
 		for (int i = 0; i < 3; i++) { // rows
 			for (int j = 0; j < 3; j++) { // columns
@@ -120,6 +143,10 @@ public class tic_tac_toe {
 		}
 	}
 
+	/**
+	 * This fills the array with chars from '1' to '9'
+	 * @param board 2d array of chars to represent a tic tac toe board 
+	 */
 	private static void fillBoard(char[][] board) {
 		int index = 0;
 		char ch = '1';
