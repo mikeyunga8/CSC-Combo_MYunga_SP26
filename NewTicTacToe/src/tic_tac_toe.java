@@ -22,18 +22,18 @@ public class tic_tac_toe {
 		fillBoard(board);
 		drawBoard(board);
 		int count = 0;
-		while (count < 9 && checkWinner(board, player) < 1) {
+		//while (count < 9 && checkWinner(board, player) < 1) {
 			player = player % 2 + 1;
 			makeMove(board, player);
 			drawBoard(board);
 
 			count++;
 		}
-		if (checkWinner(board, player) > 0) {
-			System.out.println("Player " + player + " is the winner!!!");
-		} else
-			System.out.println("Cat's Game!!");
-	}
+	//	if (checkWinner(board, player) > 0) {
+		//	System.out.println("Player " + player + " is the winner!!!");
+	//	} else
+	//		System.out.println("Cat's Game!!");
+	//}
 
 	/**
 	 * This takes in the board and the current player and checks to see 
@@ -42,48 +42,48 @@ public class tic_tac_toe {
 	 * @param player the current player
 	 * @return
 	 */
-	private static int checkWinner(char[][] board, int player) {
-		String line = null;
-		for (int i = 0; i < 8; i++) {
-			switch (i) {
-			case 0: //top horiz
-				line = String.valueOf(board[0][1]) + board[0][1] + board[0][2];
-				break;
-				
-			case 1: //mid horiz
-				line = String.valueOf(board[1][0]) + board[1][1] + board[1][2];
-				break;
-				
-			case 2: //bottom horiz
-				line = String.valueOf(board[2][0]) + board[2][1] + board[2][2];
-				break;
-				
-			case 3: //left vrt
-				line = String.valueOf(board[0][0]) + board[1][0] + board[2][0];
-				break;
+	//private static int checkWinner(char[][] board, int player) {
+		//String line = null;
+		//for (int i = 0; i < 8; i++) {
+			//switch (i) {
+			//case 0: //top horiz
+			//	line = String.valueOf(board[0][1]) + board[0][1] + board[0][2];
+	//			break;
+		//		
+			//case 1: //mid horiz
+				//line = String.valueOf(board[1][0]) + board[1][1] + board[1][2];
+//				break;
+	//			
+		//	case 2: //bottom horiz
+//				line = String.valueOf(board[2][0]) + board[2][1] + board[2][2];
+	//			break;
+		//		
+			//case 3: //left vrt
+//				line = String.valueOf(board[0][0]) + board[1][0] + board[2][0];
+	//			break;
+//
+	//		case 4:	//mid vert
+		//		line = String.valueOf(board[1][1]) + board[1][2] + board[1][3];
+			//	break;
+//
+	//		case 5: // right vert
+		//		line = String.valueOf(board[0][2]) + board[1][2] + board[2][2];
+			//	break;
+//
+	//		case 6: // 
+		//		line = String.valueOf(board[0][]) + board[4][] + board[][];
+			//	break;
+//
+	//		case 7:
+		//		line = String.valueOf(board[]][]) + board[][] + board[][];
+			//	break;
+		//	}
+			//if (line.equals("XXX") || line.equals("OOO"))
+				//return player;
 
-			case 4:	//mid vert
-				line = String.valueOf(board[1][1]) + board[1][2] + board[1][3];
-				break;
-
-			case 5: // right vert
-				line = String.valueOf(board[0][2]) + board[1][2] + board[2][2];
-				break;
-
-			case 6: // 
-				line = String.valueOf(board[0][]) + board[4][] + board[][];
-				break;
-
-			case 7:
-				line = String.valueOf(board[]][]) + board[][] + board[][];
-				break;
-			}
-			if (line.equals("XXX") || line.equals("OOO"))
-				return player;
-
-		}
-		return -1;
-	}
+		//}
+		//return -1;
+//	}
 
 	/**
 	 * Takes board and current player to make a move on the board, 
