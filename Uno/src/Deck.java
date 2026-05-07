@@ -13,7 +13,6 @@ public class Deck {
         int index = 0;
 
         for (int color = 0; color < 4; color++) {
-
             cards[index++] = new Card(0, color);
 
             for (int value = 1; value <= 12; value++) {

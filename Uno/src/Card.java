@@ -25,10 +25,8 @@ public class Card {
     public String toString() {
 
         String[] colors = {"Red", "Yellow", "Green", "Blue", "Wild"};
-        String[] values = {
-            "0","1","2","3","4","5","6","7","8","9",
-            "Skip","Reverse","Draw Two","Wild","Wild Draw Four"
-        };
+        String[] values = {"0","1","2","3","4","5","6","7","8","9",
+            "Skip","Reverse","Draw Two","Wild","Wild Draw Four"};
 
         return values[value] + " of " + colors[color];
     }
